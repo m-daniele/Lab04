@@ -8,6 +8,12 @@ class SpellChecker:
         self._multiDic = md.MultiDictionary()
         self._view = view
 
+    def handle_lang_dd_change(self, language=None):
+        return language
+
+    def handle_modality_dd_change(self, modality=None):
+        return modality
+
     def handleSentence(self, txtIn, language, modality):
         txtIn = replaceChars(txtIn.lower())
 
@@ -43,6 +49,7 @@ class SpellChecker:
                 return paroleErrate, t2 - t1
             case _:
                 return None
+
 
 
     def printMenu(self):
